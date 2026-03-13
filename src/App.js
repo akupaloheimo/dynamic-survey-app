@@ -93,18 +93,18 @@ function App() {
     localStorage.setItem("survey-progress", JSON.stringify(progress));
   };
 
-  const loadProgressFromStorage = () => {
-    const saved = localStorage.getItem("survey-progress");
-    if (saved) {
-      const progress = JSON.parse(saved);
-      setResponses(progress.responses || {});
-      setFollowUps(progress.followUps || {});
-      setFollowUpResponses(progress.followUpResponses || {});
-      setCompletedQuestions(new Set(progress.completedQuestions || []));
-      setSubmittedResponses(new Set(progress.submittedResponses || []));
-      setSubmittedFollowUps(new Set(progress.submittedFollowUps || []));
-    }
-  };
+  // const loadProgressFromStorage = () => {
+  //   const saved = localStorage.getItem("survey-progress");
+  //   if (saved) {
+  //     const progress = JSON.parse(saved);
+  //     setResponses(progress.responses || {});
+  //     setFollowUps(progress.followUps || {});
+  //     setFollowUpResponses(progress.followUpResponses || {});
+  //     setCompletedQuestions(new Set(progress.completedQuestions || []));
+  //     setSubmittedResponses(new Set(progress.submittedResponses || []));
+  //     setSubmittedFollowUps(new Set(progress.submittedFollowUps || []));
+  //   }
+  // };
 
   useEffect(() => {
     localStorage.setItem(
