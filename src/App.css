@@ -1,11 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
   font-size: large;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 768px) {
+  .question-box {
+    border-radius: 14px;
+    padding: 14px;
+  }
+
+  .question-text,
+  .follow-up {
+    font-size: 1rem;
+  }
+
+  .gemini-logo {
+    width: 78px;
+  }
+
+  .gemini-image-text {
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .body {
+    padding-top: 96px;
+  }
+
+  .submit-button,
+  .download-button {
+    border-radius: 12px;
+    padding: 12px;
+  }
+
+  .progress-text {
+    font-size: 0.78rem;
   }
 }
 
@@ -40,6 +76,9 @@
   cursor: pointer;
   border-radius: 30px;
   margin-top: 16px;
+  width: 100%;
+  max-width: 420px;
+  font-size: 16px;
 }
 
 .download-button {
@@ -54,6 +93,9 @@
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 30px;
+  width: 100%;
+  max-width: 420px;
+  font-size: 16px;
 }
 
 .submit-button:disabled {
@@ -67,19 +109,18 @@
   background-color: #282c34;
   text-align: center;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
+  padding: 88px 12px 20px;
 }
 
 .question-box {
   background-color: white;
-  border-radius: 30px;
-  width: 100vh;
-  padding: 24px;
+  border-radius: 20px;
+  width: min(92vw, 900px);
+  padding: 20px;
   color: black;
   text-align: left;
-  align-items: left;
-  justify-content: left;
 }
 
 .questions-container {
@@ -89,11 +130,12 @@
 }
 
 .question-section {
-  min-height: 100vh;
+  min-height: auto;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  scroll-snap-align: start;
+  padding: 16px 0;
 }
 
 .question {
@@ -120,19 +162,13 @@
   margin-top: 16px;
 }
 
-.main-input {
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
+.main-input,
 .followup-input {
+  width: 100%;
   padding: 12px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-top: 16px;
+  border-radius: 8px;
 }
 
 .follow-up {
@@ -153,9 +189,9 @@
   left: 0;
   right: 0;
   background: rgba(40, 44, 52, 0.95);
-  padding: 1rem;
+  padding: 10px 12px;
   z-index: 1000;
-  height: 40px;
+  min-height: 64px;
 }
 
 .progress-bar {
@@ -173,9 +209,9 @@
 }
 
 .progress-text {
-  margin-top: 0.5rem;
+  margin-top: 8px;
   color: white;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 /* Question status indicators */

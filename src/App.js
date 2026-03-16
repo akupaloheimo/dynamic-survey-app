@@ -272,7 +272,7 @@ function App() {
             </div>
           );
         })}
-        {completedQuestions.size !== questions.length && (
+        {completedQuestions.size === questions.length && (
           <div className="summary-section">
             <div className="question-box summary-box">
               <h2>Survey Complete!</h2>
