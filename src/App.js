@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [questions] = useState([
-    "What is your favorite food?",
-    "How often do you exercise?",
-    "What's your preferred way to relax?",
-    "What motivates you most in life?",
-    "How do you handle stress?",
+    "Describe a hobby or activity that you do regularly, and what it typically involves?",
+	  "What motivates you to do this activity, and what does it mean to you personally?",
+	  "Can you walk me through a recent occasion when you engaged in this activity, including what you did and how you experienced it?",
+	  "What challenges or difficulties, if any, have you encountered in this activity?",
+    "How has your engagement with this activity changed over time?",
   ]);
 
   const [responses, setResponses] = useState({});
