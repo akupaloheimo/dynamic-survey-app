@@ -5,9 +5,9 @@ import { useState, useEffect } from "react";
 function App() {
   const [questions] = useState([
     "Describe a hobby or activity that you do regularly, and what it typically involves?",
-	  "What motivates you to do this activity, and what does it mean to you personally?",
-	  "Can you walk me through a recent occasion when you engaged in this activity, including what you did and how you experienced it?",
-	  "What challenges or difficulties, if any, have you encountered in this activity?",
+    "What motivates you to do this activity, and what does it mean to you personally?",
+    "Can you walk me through a recent occasion when you engaged in this activity, including what you did and how you experienced it?",
+    "What challenges or difficulties, if any, have you encountered in this activity?",
     "How has your engagement with this activity changed over time?",
   ]);
 
@@ -332,7 +332,7 @@ function App() {
       </div>
       <footer>
         <p>
-          Made by Aku Paloheimo and Oona Tujala for research purposes. Follow-up
+          Made by Aku Paloheimo and Oona Tujula for research purposes. Follow-up
           questions generated with{" "}
           <a
             href="https://ai.google.dev/gemini-api/docs/models"
@@ -345,7 +345,7 @@ function App() {
         <p>
           To contact us, email{" "}
           <a href="mailto:aku.paloheimo@aalto.fi">aku.paloheimo@aalto.fi</a> or{" "}
-          <a href="mailto:oona.tujala@aalto.fi">oona.tujala@aalto.fi</a>
+          <a href="mailto:oona.tujula@aalto.fi">oona.tujula@aalto.fi</a>
         </p>
       </footer>
     </div>

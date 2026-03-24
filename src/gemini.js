@@ -6,12 +6,31 @@ const ai = new GoogleGenAI({
 });
 
 async function gemini(input) {
-  const response = await ai.models.generateContent({
-    model: "gemini-3.1-flash-lite-preview", // or "gemini-2.5-flash"
-    contents: input,
-  });
-  console.log(response.text);
-  return response.text;
+  try {
+    const response = await ai.models.generateContent({
+      model: "gemini-3.1-flash-lite-preview",
+      contents: input,
+    });
+    console.log(response.text);
+    return response.text;
+  } catch (error) {
+    console.warn(
+      "gemini-3.1-flash-lite-preview failed, trying gemini-3-flash-preview:",
+      error,
+    );
+
+    try {
+      const response = await ai.models.generateContent({
+        model: "gemini-3-flash-preview",
+        contents: input,
+      });
+      console.log(response.text);
+      return response.text;
+    } catch (fallbackError) {
+      console.error("Both models failed:", fallbackError);
+      throw fallbackError;
+    }
+  }
 }
 
 export default gemini;
